@@ -1,0 +1,8 @@
+<h1>{{ flatpage.title }}</h1>
+
+{{ flatpage.content }}
+
+{% for link in flatpage.meta.links.all%}
+    <a href="{{ link.url }}">{{ link.title }}</a>
+{% endfor %}
+
