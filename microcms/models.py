@@ -5,7 +5,8 @@ from django.contrib.flatpages.models import FlatPage
 
 class Meta(models.Model):
     flatpage = models.OneToOneField(FlatPage)
-    links = models.ManyToManyField(FlatPage, related_name='superpages')
+    links = models.ManyToManyField(FlatPage, related_name='superpages',
+                                   blank=True, null=True)
 
     def __unicode__(self):
         return self.flatpage.title

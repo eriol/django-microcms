@@ -18,13 +18,7 @@ class MetaInline(admin.StackedInline):
     model = Meta
 
 class FlatPageAdmin(StockFlatPageAdmin):
-    #exclude = ('sites',)
     inlines = [MetaInline]
-
-    def save_model(self, request, obj, form, change):
-        if not change:
-            obj.sites.add(Site.objects.get())
-        obj.save()
 
 admin.site.unregister(FlatPage)
 
