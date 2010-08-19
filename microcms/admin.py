@@ -4,6 +4,7 @@ from django.contrib.flatpages.models import FlatPage
 from django.contrib.flatpages.admin import FlatPageAdmin as StockFlatPageAdmin
 from django.contrib.sites.models import Site
 
+from microcms.conf import settings
 from microcms.models import Meta
 
 class MetaAdmin(admin.ModelAdmin):
@@ -11,6 +12,9 @@ class MetaAdmin(admin.ModelAdmin):
     list_filter = ('flatpage',)
     ordering = ('flatpage',)
     search_fields = ('flatpage',)
+
+    class Media:
+        js = [settings.TINYMCE_URL, settings.TINYMCE_SETUP_URL]
 
 admin.site.register(Meta, MetaAdmin)
 
