@@ -13,9 +13,6 @@ class MetaAdmin(admin.ModelAdmin):
     ordering = ('flatpage',)
     search_fields = ('flatpage',)
 
-    class Media:
-        js = [settings.TINYMCE_URL, settings.TINYMCE_SETUP_URL]
-
 admin.site.register(Meta, MetaAdmin)
 
 class MetaInline(admin.StackedInline):
@@ -23,6 +20,9 @@ class MetaInline(admin.StackedInline):
 
 class FlatPageAdmin(StockFlatPageAdmin):
     inlines = [MetaInline]
+
+    class Media:
+        js = [settings.TINYMCE_URL, settings.TINYMCE_SETUP_URL]
 
 admin.site.unregister(FlatPage)
 
