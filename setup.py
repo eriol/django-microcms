@@ -9,5 +9,5 @@ setup(name='microcms',
       author='Daniele Tricoli',
       author_email='eriol@mornie.org',
       package_dir={'microcms': 'microcms'},
-      packages=['microcms', 'microcms.conf']
+      packages=['microcms', 'microcms.conf', 'microcms.templatetags']
      )
