@@ -4,7 +4,8 @@ from django.template.defaultfilters import stringfilter
 
 register = template.Library()
 
-@register.simple_tag
+@register.filter
+@stringfilter
 def active_page(url, regex):
     """Check the current url with regex and return 'active' if matched."""
     import re
