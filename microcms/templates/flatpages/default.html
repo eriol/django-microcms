@@ -2,7 +2,6 @@
 
 {{ flatpage.content }}
 
-{% for link in flatpage.meta.links.all%}
+{% for link in flatpage.extra.links.all%}
     <a href="{{ link.url }}">{{ link.title }}</a>
 {% endfor %}
-

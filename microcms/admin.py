@@ -1,25 +1,25 @@
 # -*- coding: utf-8 -*-
 from django.contrib import admin
 from django.contrib.flatpages.models import FlatPage
-from django.contrib.flatpages.admin import FlatPageAdmin as StockFlatPageAdmin
+from django.contrib.flatpages.admin import FlatPageAdmin as OldFlatPageAdmin
 from django.contrib.sites.models import Site
 from django.utils.translation import ugettext_lazy as _
 
 from microcms.conf import settings
-from microcms.models import Meta
+from microcms.models import Extra
 
-class MetaAdmin(admin.ModelAdmin):
+class ExtraAdmin(admin.ModelAdmin):
     list_display = ('flatpage',)
     list_filter = ('flatpage',)
     ordering = ('flatpage',)
     search_fields = ('flatpage',)
 
-admin.site.register(Meta, MetaAdmin)
+admin.site.register(Extra, ExtraAdmin)
 
-class MetaInline(admin.StackedInline):
-    model = Meta
+class ExtraInline(admin.StackedInline):
+    model = Extra
 
-class FlatPageAdmin(StockFlatPageAdmin):
+class FlatPageAdmin(OldFlatPageAdmin):
     fieldsets = (
         (None, {'fields': ('url', 'title', 'content')}),
         (_('Advanced options'),
@@ -30,7 +30,7 @@ class FlatPageAdmin(StockFlatPageAdmin):
          }
         ),
     )
-    inlines = [MetaInline]
+    inlines = [ExtraInline]
 
     class Media:
         js = [settings.TINYMCE_URL, settings.TINYMCE_SETUP_URL]
