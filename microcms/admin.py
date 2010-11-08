@@ -1,8 +1,10 @@
 # -*- coding: utf-8 -*-
+from django import forms
 from django.contrib import admin
 from django.contrib.flatpages.models import FlatPage
 from django.contrib.flatpages.admin import FlatPageAdmin as OldFlatPageAdmin
 from django.contrib.sites.models import Site
+from django.db import models
 from django.utils.translation import ugettext_lazy as _
 
 from microcms.conf import settings
@@ -32,8 +34,13 @@ class FlatPageAdmin(OldFlatPageAdmin):
     )
     inlines = [ExtraInline]
 
+    formfield_overrides = {
+        models.TextField:
+            {'widget': forms.Textarea(attrs={'class':'ckeditor',})},
+    }
+
     class Media:
-        js = [settings.TINYMCE_URL, settings.TINYMCE_SETUP_URL]
+        js = [settings.CKEDITOR_URL]
 
     def save_model(self, request, obj, form, change):
         # Get the site with the lower id
@@ -42,5 +49,4 @@ class FlatPageAdmin(OldFlatPageAdmin):
         obj.sites.add(site)
 
 admin.site.unregister(FlatPage)
-
 admin.site.register(FlatPage, FlatPageAdmin)
