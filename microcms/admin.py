@@ -1,29 +1,31 @@
 # -*- coding: utf-8 -*-
 from django import forms
+from django.conf import settings
 from django.contrib import admin
 from django.contrib.flatpages.models import FlatPage
-from django.contrib.flatpages.admin import FlatPageAdmin as OldFlatPageAdmin
+from django.contrib.flatpages.admin import FlatpageForm, FlatPageAdmin
 from django.contrib.sites.models import Site
 from django.db import models
 from django.utils.translation import ugettext_lazy as _
 
-from microcms import settings
-from microcms.models import Extra
 
-class ExtraAdmin(admin.ModelAdmin):
-    list_display = ('flatpage',)
-    list_filter = ('flatpage',)
-    ordering = ('flatpage',)
-    search_fields = ('flatpage',)
+from microcms import settings as micro_settings
+from microcms.models import Page
 
-admin.site.register(Extra, ExtraAdmin)
+class PageForm(FlatpageForm):
+    class Meta:
+        model = Page
 
-class ExtraInline(admin.StackedInline):
-    model = Extra
+class PageAdmin(FlatPageAdmin):
+    form = PageForm
 
-class FlatPageAdmin(OldFlatPageAdmin):
+    list_display = ('url', 'title', 'pub_date', 'enable_comments', 'author')
+    list_display_links = ('url', 'title')
     fieldsets = (
         (None, {'fields': ('url', 'title', 'content')}),
+        (_('Extra'),
+         {'classes': ('collapse closed',), 'fields': ('links', 'pub_date')}),
+
         (_('Advanced options'),
          {'classes': ('collapse closed',),
           'fields': ('enable_comments',
@@ -31,8 +33,11 @@ class FlatPageAdmin(OldFlatPageAdmin):
                      'template_name')
          }
         ),
+
+        (_('Search Engine Optimization'),
+         {'classes': ('collapse closed',), 'fields': ('meta_keywords',
+                                                      'meta_description')}),
     )
-    inlines = [ExtraInline]
 
     formfield_overrides = {
         models.TextField:
@@ -40,13 +45,16 @@ class FlatPageAdmin(OldFlatPageAdmin):
     }
 
     class Media:
-        js = [settings.CKEDITOR_URL]
+        js = [micro_settings.CKEDITOR_URL]
 
     def save_model(self, request, obj, form, change):
-        # Get the site with the lower id
-        site = Site.objects.order_by('id')[0]
+
+        # Get the site from settings
+        site = Site.objects.get(id__exact=settings.SITE_ID)
+        if not change:
+            obj.author = request.user
         obj.save()
         obj.sites.add(site)
 
 admin.site.unregister(FlatPage)
-admin.site.register(FlatPage, FlatPageAdmin)
+admin.site.register(Page, PageAdmin)
