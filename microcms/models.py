@@ -12,8 +12,8 @@ class Page(FlatPage):
     links = models.ManyToManyField('Page', related_name='superpages',
                                    blank=True, null=True)
     author = models.ForeignKey(User, verbose_name=_('author'))
-    pub_date = models.DateTimeField(_('publication date'),
-                                    default=datetime.datetime.now)
+    pub_date = models.DateTimeField(_('publication date'), auto_now_add=True)
+    modified_date = models.DateTimeField(_('last update date'), auto_now=True)
     # Fields for Search Engine Optimization
     meta_keywords = models.CharField(_('meta keywords'), blank=True,
                                      max_length=255)

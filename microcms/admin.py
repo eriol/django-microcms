@@ -19,12 +19,13 @@ class PageForm(FlatpageForm):
 class PageAdmin(FlatPageAdmin):
     form = PageForm
 
-    list_display = ('url', 'title', 'pub_date', 'enable_comments', 'author')
+    list_display = ('url', 'title', 'pub_date', 'modified_date',
+                    'enable_comments', 'author')
     list_display_links = ('url', 'title')
     fieldsets = (
         (None, {'fields': ('url', 'title', 'content')}),
         (_('Extra'),
-         {'classes': ('collapse closed',), 'fields': ('links', 'pub_date')}),
+         {'classes': ('collapse closed',), 'fields': ('links',)}),
 
         (_('Advanced options'),
          {'classes': ('collapse closed',),
