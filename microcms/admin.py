@@ -7,7 +7,7 @@ from django.contrib.sites.models import Site
 from django.db import models
 from django.utils.translation import ugettext_lazy as _
 
-from microcms.conf import settings
+from microcms import settings
 from microcms.models import Extra
 
 class ExtraAdmin(admin.ModelAdmin):
