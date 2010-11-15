@@ -46,6 +46,10 @@ class PageAdmin(FlatPageAdmin):
     }
 
     class Media:
+        css = {
+            'all': micro_settings.MICROCMS_CUSTOM_CSS
+        }
+
         js = [micro_settings.CKEDITOR_URL]
 
     def save_model(self, request, obj, form, change):
