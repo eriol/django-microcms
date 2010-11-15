@@ -1,0 +1,67 @@
+# microcms Italian l18n.
+# Copyright (C) 2010 Daniele Tricoli
+# This file is distributed under the same license as the PACKAGE package.
+# Daniele Tricoli <eriol@mornie.org>, 2010.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: microcms\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2010-11-16 00:06+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: Daniele Tricoli <eriol@mornie.org>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms:  nplurals=2; plural=(n != 1);\n"
+
+#: admin.py:27
+msgid "Extra"
+msgstr "Extra"
+
+#: admin.py:30
+msgid "Advanced options"
+msgstr "Opzioni avanzate"
+
+#: admin.py:38
+msgid "Search Engine Optimization"
+msgstr "Ottimizzazione per motori di ricerca"
+
+#: models.py:12
+msgid "author"
+msgstr "autore"
+
+#: models.py:13
+msgid "publication date"
+msgstr "data di pubblicazione"
+
+#: models.py:14
+msgid "last modified date"
+msgstr "data ultima modifica"
+
+#: models.py:18 models.py:31
+msgid "page"
+msgstr "pagina"
+
+#: models.py:20
+msgid "meta keywords"
+msgstr "meta keywords"
+
+#: models.py:21
+msgid "Key words of the page. Max 255 characters."
+msgstr "Parole chiave della pagina. Massimo 255 catatteri."
+
+#: models.py:24
+msgid "meta description"
+msgstr "meta description"
+
+#: models.py:25
+msgid "A brief description of the page. Max 255 characters."
+msgstr "Una breve descrizione della pagina. Massimo 255 caratteri."
+
+#: models.py:32
+msgid "pages"
+msgstr "pagine"
