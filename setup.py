@@ -1,4 +1,11 @@
 # -*- coding: utf-8 -*-
+"""microcms setup file.
+
+THIS SOFTWARE IS UNDER BSD LICENSE.
+Copyright (c) 2010 Daniele Tricoli <eriol@mornie.org>
+
+Read LICENSE for more informations.
+"""
 from setuptools import setup, find_packages
 
 from microcms import VERSION
