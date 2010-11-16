@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: microcms\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-11-16 00:06+0100\n"
+"POT-Creation-Date: 2010-11-16 11:27+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Daniele Tricoli <eriol@mornie.org>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,50 +18,54 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms:  nplurals=2; plural=(n != 1);\n"
 
-#: admin.py:27
+#: admin.py:34
 msgid "Extra"
 msgstr "Extra"
 
-#: admin.py:30
+#: admin.py:37
 msgid "Advanced options"
 msgstr "Opzioni avanzate"
 
-#: admin.py:38
+#: admin.py:45
 msgid "Search Engine Optimization"
 msgstr "Ottimizzazione per motori di ricerca"
 
-#: models.py:12
+#: models.py:18
 msgid "author"
 msgstr "autore"
 
-#: models.py:13
+#: models.py:19
 msgid "publication date"
 msgstr "data di pubblicazione"
 
-#: models.py:14
+#: models.py:20
 msgid "last modified date"
 msgstr "data ultima modifica"
 
-#: models.py:18 models.py:31
-msgid "page"
-msgstr "pagina"
+#: models.py:24
+msgid "links"
+msgstr "link"
 
-#: models.py:20
+#: models.py:26
 msgid "meta keywords"
 msgstr "meta keywords"
 
-#: models.py:21
+#: models.py:27
 msgid "Key words of the page. Max 255 characters."
 msgstr "Parole chiave della pagina. Massimo 255 catatteri."
 
-#: models.py:24
+#: models.py:30
 msgid "meta description"
 msgstr "meta description"
 
-#: models.py:25
+#: models.py:31
 msgid "A brief description of the page. Max 255 characters."
 msgstr "Una breve descrizione della pagina. Massimo 255 caratteri."
 
-#: models.py:32
+#: models.py:37
+msgid "page"
+msgstr "pagina"
+
+#: models.py:38
 msgid "pages"
 msgstr "pagine"
