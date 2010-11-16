@@ -10,7 +10,7 @@ Installation
 
 Assuming that you want to install ``microcms`` version 0.1:
 
-    $ pip install http://hg.mornie.org/django/microcms/@v0.1#egg=microcms
+    $ pip install hg+http://hg.mornie.org/django/microcms/@v0.1#egg=microcms
 
 Or download a packaged version and and use Python's ``distutils`` to install.
 
