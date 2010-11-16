@@ -6,7 +6,7 @@ from microcms import VERSION
 setup(
     name='microcms',
     version=VERSION,
-    description='Simple flatpage enhancement.',
+    description='Minimalistic flatpage enhancement.',
     author='Daniele Tricoli',
     author_email='eriol@mornie.org',
     packages=find_packages(),
