@@ -19,9 +19,11 @@ from django.utils.translation import ugettext_lazy as _
 from microcms import settings as micro_settings
 from microcms.models import Page
 
+
 class PageForm(FlatpageForm):
     class Meta:
         model = Page
+
 
 class PageAdmin(FlatPageAdmin):
     form = PageForm
@@ -38,9 +40,7 @@ class PageAdmin(FlatPageAdmin):
          {'classes': ('collapse closed',),
           'fields': ('enable_comments',
                      'registration_required',
-                     'template_name')
-         }
-        ),
+                     'template_name')}),
 
         (_('Search Engine Optimization'),
          {'classes': ('collapse closed',), 'fields': ('meta_keywords',
@@ -49,14 +49,11 @@ class PageAdmin(FlatPageAdmin):
 
     formfield_overrides = {
         models.TextField:
-            {'widget': forms.Textarea(attrs={'class':'ckeditor',})},
+            {'widget': forms.Textarea(attrs={'class': 'ckeditor'})},
     }
 
     class Media:
-        css = {
-            'all': micro_settings.MICROCMS_CUSTOM_CSS
-        }
-
+        css = {'all': micro_settings.MICROCMS_CUSTOM_CSS}
         js = [micro_settings.CKEDITOR_URL]
 
     def save_model(self, request, obj, form, change):
