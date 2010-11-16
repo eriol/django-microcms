@@ -1,7 +1,14 @@
-<h1>{{ flatpage.title }}</h1>
+<html>
+	<head>
+		<title>{{ flatpage.title }}</title>
+		<meta name="keywords" content="{{ flatpage.page.meta_keywords }}" />
+		<meta name="description" content="{{ flatpage.page.meta_description }}" />
+	</head>
+	<h1>{{ flatpage.title }}</h1>
 
-{{ flatpage.content }}
+	{{ flatpage.content }}
 
-{% for link in flatpage.extra.links.all%}
-    <a href="{{ link.url }}">{{ link.title }}</a>
-{% endfor %}
+	{% for link in flatpage.page.links.all%}
+		<a href="{{ link.url }}">{{ link.title }}</a>
+	{% endfor %}
+</html>
