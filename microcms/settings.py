@@ -1,4 +1,11 @@
 # -*- coding: utf-8 -*-
+"""microcms.settings module, custom settings for microcms.
+
+THIS SOFTWARE IS UNDER BSD LICENSE.
+Copyright (c) 2010 Daniele Tricoli <eriol@mornie.org>
+
+Read LICENSE for more informations.
+"""
 from django.conf import settings
 
 CKEDITOR_URL = getattr(settings, 'CKEDITOR_URL', 'ckeditor/ckeditor.js')

@@ -1,8 +1,14 @@
 # -*- coding: utf-8 -*-
+"""microcms.models module, Page the core model of microcms.
+
+THIS SOFTWARE IS UNDER BSD LICENSE.
+Copyright (c) 2010 Daniele Tricoli <eriol@mornie.org>
+
+Read LICENSE for more informations.
+"""
 import datetime
 
 from django.db import models
-from django.conf import settings
 from django.contrib.auth.models import User
 from django.contrib.flatpages.models import FlatPage
 from django.utils.translation import ugettext_lazy as _

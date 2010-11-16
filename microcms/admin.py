@@ -1,4 +1,11 @@
 # -*- coding: utf-8 -*-
+"""microcms.admin module, admin site configuration and options.
+
+THIS SOFTWARE IS UNDER BSD LICENSE.
+Copyright (c) 2010 Daniele Tricoli <eriol@mornie.org>
+
+Read LICENSE for more informations.
+"""
 from django import forms
 from django.conf import settings
 from django.contrib import admin
