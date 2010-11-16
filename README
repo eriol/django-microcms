@@ -1,0 +1,42 @@
+========
+microcms
+========
+
+``microcms`` is a minimalistic enhancement of Django flatpages app. It provides
+few additional fields and integrates CKeditor.
+
+Installation
+============
+
+Assuming that you want to install ``microcms`` version 0.1:
+
+    $ pip install http://hg.mornie.org/django/microcms/@v0.1#egg=microcms
+
+Or download a packaged version and and use Python's ``distutils`` to install.
+
+Getting started
+===============
+
+Previously you must have correctly set up Django ``flatpages``.
+
+Simply add ``"microcms"`` to your ``INSTALLED_APPS`` after ``"flatpages"``.
+
+CKeditor integration
+====================
+
+Default settings assumes that CKeditor is available at
+``MEDIA_URL/ckeditor/ckeditor.js``. You can change it using CKEDITOR_URL in
+your settings.py:
+
+    CKEDITOR_URL = "path/to/ckeditor.js"
+
+CKEDITOR_URL will be prepended with MEDIA_URL so you can use a relative path.
+
+You can need to add some custom css to fix displaying issues or to customize the
+admin page. CKeditor kama theme, for example, doesn't look good without a fix.
+Just use MICROCMS_CUSTOM_CSS in your settings.py:
+
+    MICROCMS_CUSTOM_CSS = ('kama-fix.css',)
+
+Don't forget to use a tuple: this is done to give greater flexibility. Again
+values inside MICROCMS_CUSTOM_CSS will be prepended with MEDIA_URL.
