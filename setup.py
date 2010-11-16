@@ -5,7 +5,7 @@ from microcms import VERSION
 
 setup(
     name='microcms',
-    version=VERSION,
+    version='.'.join(str(v) for v in VERSION),
     description='Minimalistic flatpage enhancement.',
     author='Daniele Tricoli',
     author_email='eriol@mornie.org',
