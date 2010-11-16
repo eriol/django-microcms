@@ -13,6 +13,7 @@ setup(
     package_data = {
         'microcms': [
             'locale/*/LC_MESSAGES/*',
+            'templates/flatpages/*',
         ],
     },
 )

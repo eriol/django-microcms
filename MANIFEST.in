@@ -1,4 +1,6 @@
-include MANIFEST.in
 include AUTHORS
+include LICENSE
+include MANIFEST.in
 recursive-include microcms/locale *
+recursive-include microcms/templates *
 
