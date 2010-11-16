@@ -21,7 +21,7 @@ class Page(FlatPage):
                                          auto_now=True)
     links = models.ManyToManyField('Page', blank=True, null=True,
                                    related_name='superpages',
-                                   verbose_name=_('page'))
+                                   verbose_name=_('links'))
     # Fields for Search Engine Optimization
     meta_keywords = models.CharField(_('meta keywords'), blank=True,
                                      help_text=_('Key words of the page. '
