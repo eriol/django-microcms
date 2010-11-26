@@ -11,7 +11,7 @@ from setuptools import setup, find_packages
 from microcms import VERSION
 
 setup(
-    name='microcms',
+    name='django-microcms',
     version='.'.join(str(v) for v in VERSION),
     description='Minimalistic flatpage enhancement.',
     author='Daniele Tricoli',
