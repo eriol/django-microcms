@@ -1,25 +1,32 @@
-========
-microcms
-========
+===============
+django-microcms
+===============
 
-``microcms`` is a minimalistic enhancement of Django flatpages app. It provides
-few additional fields and integrates CKeditor.
+``django-microcms`` is a minimalistic enhancement of Django flatpages app. It
+provides few additional fields and integrates CKeditor.
 
 Installation
 ============
 
-Assuming that you want to install ``microcms`` version 0.1.0:
+Assuming that you want to install ``microcms`` version 0.1.1:
 
-    $ pip install -e hg+http://hg.mornie.org/django/microcms/@0.1.0#egg=microcms
+From a packaged version::
 
-Or download a packaged version and and use Python's ``distutils`` to install.
+    $ pip install -f http://downloads.mornie.org/django-microcms/django-microcms-0.1.1.tar.gz
+
+From source repository::
+
+    $ pip install -e hg+http://hg.mornie.org/django/microcms/@0.1.1#egg=django-microcms
+
+Or download a packaged version from http://downloads.mornie.org/django-microcms/
+and and use Python's ``distutils`` to install.
 
 Getting started
 ===============
 
 Previously you must have correctly set up Django ``flatpages``.
 
-Simply add ``"microcms"`` to your ``INSTALLED_APPS`` after ``"flatpages"``.
+Simply add ``microcms`` to your ``INSTALLED_APPS`` after ``flatpages``.
 
 CKeditor integration
 ====================
@@ -40,3 +47,7 @@ Just use MICROCMS_CUSTOM_CSS in your settings.py:
 
 Don't forget to use a tuple: this is done to give greater flexibility. Again
 values inside MICROCMS_CUSTOM_CSS will be prepended with MEDIA_URL.
+
+
+
+Thanks for downloading django-microcms.
