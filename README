@@ -8,15 +8,15 @@ provides few additional fields and integrates CKeditor.
 Installation
 ============
 
-Assuming that you want to install ``microcms`` version 0.1.1:
+Assuming that you want to install ``microcms`` version 0.1.2:
 
 From a packaged version::
 
-    $ pip install -f http://downloads.mornie.org/django-microcms/django-microcms-0.1.1.tar.gz
+    $ pip install http://downloads.mornie.org/django-microcms/django-microcms-0.1.2.tar.gz
 
 From source repository::
 
-    $ pip install -e hg+http://hg.mornie.org/django/microcms/@0.1.1#egg=django-microcms
+    $ pip install -e hg+http://hg.mornie.org/django/microcms/@0.1.2#egg=django-microcms
 
 Or download a packaged version from http://downloads.mornie.org/django-microcms/
 and and use Python's ``distutils`` to install.
