@@ -31,6 +31,9 @@ class PageAdmin(FlatPageAdmin):
     list_display = ('url', 'title', 'pub_date', 'modified_date',
                     'enable_comments', 'author')
     list_display_links = ('url', 'title')
+    list_filter = FlatPageAdmin.list_filter + ('author',
+                                               'pub_date',
+                                               'modified_date')
     fieldsets = (
         (None, {'fields': ('url', 'title', 'content')}),
         (_('Extra'),
