@@ -40,7 +40,8 @@ class PageAdmin(FlatPageAdmin):
          {'classes': ('collapse closed',),
           'fields': ('enable_comments',
                      'registration_required',
-                     'template_name')}),
+                     'template_name',
+                     'sites')}),
 
         (_('Search Engine Optimization'),
          {'classes': ('collapse closed',), 'fields': ('meta_keywords',
@@ -56,14 +57,18 @@ class PageAdmin(FlatPageAdmin):
         css = {'all': micro_settings.MICROCMS_CUSTOM_CSS}
         js = [micro_settings.CKEDITOR_URL]
 
+    def formfield_for_manytomany(self, db_field, request, **kwargs):
+        if db_field.name == 'sites':
+            kwargs["initial"] = [Site.objects.get_current()]
+        return super(PageAdmin, self).formfield_for_manytomany(db_field,
+                                                               request,
+                                                               **kwargs)
+
     def save_model(self, request, obj, form, change):
 
-        # Get the site from settings
-        site = Site.objects.get(id__exact=settings.SITE_ID)
         if not change:
             obj.author = request.user
         obj.save()
-        obj.sites.add(site)
 
 admin.site.unregister(FlatPage)
 admin.site.register(Page, PageAdmin)
