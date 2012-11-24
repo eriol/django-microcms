@@ -15,4 +15,4 @@ CKEDITOR_URL = getattr(settings, 'CKEDITOR_URL', 'ckeditor/ckeditor.js')
 # MICROCMS_CUSTOM_CSS = ('custom-css1.css', 'custom-css2.css') # multiple css
 MICROCMS_CUSTOM_CSS = getattr(settings,
                               'MICROCMS_CUSTOM_CSS',
-                              ('microcms/css/kama-fix.css'))
+                              ('microcms/css/kama-fix.css',))
