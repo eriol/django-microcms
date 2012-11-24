@@ -1,5 +1,5 @@
 # microcms Italian l18n.
-# Copyright (C) 2010 Daniele Tricoli
+# Copyright (C) 2010-2012 Daniele Tricoli
 # This file is distributed under the same license as the PACKAGE package.
 # Daniele Tricoli <eriol@mornie.org>, 2010.
 #

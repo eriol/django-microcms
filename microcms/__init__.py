@@ -2,7 +2,7 @@
 """microcms package, minimalistic flatpage enhancement.
 
 THIS SOFTWARE IS UNDER BSD LICENSE.
-Copyright (c) 2010 Daniele Tricoli <eriol@mornie.org>
+Copyright (c) 2010-2012 Daniele Tricoli <eriol@mornie.org>
 
 Read LICENSE for more informations.
 """
