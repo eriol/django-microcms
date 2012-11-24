@@ -16,7 +16,7 @@ from django.db import models
 from django.utils.translation import ugettext_lazy as _
 
 
-from microcms import settings as micro_settings
+from microcms import settings as microcms_settings
 from microcms.models import Page
 
 
@@ -57,8 +57,8 @@ class PageAdmin(FlatPageAdmin):
     }
 
     class Media:
-        css = {'all': micro_settings.MICROCMS_CUSTOM_CSS}
-        js = [micro_settings.CKEDITOR_URL]
+        css = {'all': microcms_settings.MICROCMS_CUSTOM_CSS}
+        js = [microcms_settings.CKEDITOR_URL]
 
     def formfield_for_manytomany(self, db_field, request, **kwargs):
         if db_field.name == 'sites':
