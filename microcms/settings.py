@@ -13,4 +13,6 @@ CKEDITOR_URL = getattr(settings, 'CKEDITOR_URL', 'ckeditor/ckeditor.js')
 # In yours settings.py you should use:
 # MICROCMS_CUSTOM_CSS = ('custom-css.css',) # single css file
 # MICROCMS_CUSTOM_CSS = ('custom-css1.css', 'custom-css2.css') # multiple css
-MICROCMS_CUSTOM_CSS = getattr(settings, 'MICROCMS_CUSTOM_CSS', ())
+MICROCMS_CUSTOM_CSS = getattr(settings,
+                              'MICROCMS_CUSTOM_CSS',
+                              ('microcms/css/kama-fix.css'))
