@@ -4,4 +4,4 @@ include MANIFEST.in
 include README
 recursive-include microcms/locale *
 recursive-include microcms/templates *
-
+recursive-include microcms/static *

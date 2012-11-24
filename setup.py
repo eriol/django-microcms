@@ -21,6 +21,7 @@ setup(
         'microcms': [
             'locale/*/LC_MESSAGES/*',
             'templates/flatpages/*',
+            'static/microcms/css/*.css'
         ],
     },
 )
