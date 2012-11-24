@@ -4,6 +4,7 @@ Release 0.2.0 (November 24, 2012)
 * Auto select current Site instead of silently add it using save_model
 * Added list_filter
 * Added a css to fix CKeditor iside the admin app
+* This changelog :)
 
 Release 0.1.2 (November 29, 2010)
 =================================
