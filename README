@@ -8,15 +8,15 @@ provides few additional fields and integrates CKeditor.
 Installation
 ============
 
-Assuming that you want to install ``microcms`` version 0.1.2:
+Assuming that you want to install ``django-microcms`` version 0.2.0:
 
 From a packaged version::
 
-    $ pip install http://downloads.mornie.org/django-microcms/django-microcms-0.1.2.tar.gz
+    $ pip install http://downloads.mornie.org/django-microcms/django-microcms-0.2.0.tar.gz
 
 From source repository::
 
-    $ pip install -e hg+http://hg.mornie.org/django/microcms/@0.1.2#egg=django-microcms
+    $ pip install -e hg+http://hg.mornie.org/django/microcms/@0.2.0#egg=django-microcms
 
 Or download a packaged version from http://downloads.mornie.org/django-microcms/
 and and use Python's ``distutils`` to install.
@@ -32,21 +32,24 @@ CKeditor integration
 ====================
 
 Default settings assumes that CKeditor is available at
-``MEDIA_URL/ckeditor/ckeditor.js``. You can change it using CKEDITOR_URL in
+``STATIC_URL/ckeditor/ckeditor.js``. You can change it using CKEDITOR_URL in
 your settings.py:
 
     CKEDITOR_URL = "path/to/ckeditor.js"
 
-CKEDITOR_URL will be prepended with MEDIA_URL so you can use a relative path.
+CKEDITOR_URL will be prepended with STATIC_URL so you can use a relative path.
 
 You can need to add some custom css to fix displaying issues or to customize the
-admin page. CKeditor kama theme, for example, doesn't look good without a fix.
-Just use MICROCMS_CUSTOM_CSS in your settings.py:
+admin page. CKeditor kama theme, for example, doesn't look good without a fix,
+but a custom css is provided by django-microcms itself: just use
+``django-admin.py collectstatic`` to copy it into STATIC_ROOT.
+
+If you want customize just use MICROCMS_CUSTOM_CSS in your settings.py:
 
     MICROCMS_CUSTOM_CSS = ('kama-fix.css',)
 
 Don't forget to use a tuple: this is done to give greater flexibility. Again
-values inside MICROCMS_CUSTOM_CSS will be prepended with MEDIA_URL.
+values inside MICROCMS_CUSTOM_CSS will be prepended with STATIC_URL.
 
 
 
