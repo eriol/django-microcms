@@ -1,0 +1,40 @@
+Release 0.2.0 (November 24, 2012)
+=================================
+
+* Auto select current Site instead of silently add it using save_model
+* Added list_filter
+* Added a css to fix CKeditor iside the admin app
+
+Release 0.1.2 (November 29, 2010)
+=================================
+
+* Fixed direct installation url of packaged version for pip
+
+Release 0.1.1 (November 26, 2010)
+=================================
+
+* Fixed pip installation URL from Hg repository
+* Added download URL for the packaged version at downloads.mornie.org
+
+Release 0.1.0 (November 16, 2010)
+=================================
+
+* Migrated to CKeditor from TinyMCE
+* Added an hook to load custom css
+* Added Italian translation
+
+
+Release 0.0.4 (August 27, 2010)
+===============================
+
+* Made active_page a filter
+
+Release 0.0.3 (August 27, 2010)
+===============================
+
+* Added active_page template tag
+
+Release 0.0.2 (August 19, 2010)
+===============================
+
+* First public release.
